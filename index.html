@@ -1,134 +1,380 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>خانه شیرین | فروشگاه پودر کیک</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap');
+:root{--bg:#fbf5ee;--paper:#fffdfa;--rose:#e8b9ad;--brown:#604238;--ink:#33241f;--muted:#806e65;--sage:#78866a;--line:#eddfd5}
 *{box-sizing:border-box}
-body{margin:0;background:#fff8f1;color:#49342d;font-family:Vazirmatn,Tahoma,sans-serif}
-header{background:#65483c;color:white;padding:18px;text-align:center}
-header h1{margin:0;font-size:28px}
-nav{background:#f0d9cc;padding:13px;text-align:center}
-nav a{color:#65483c;text-decoration:none;margin:0 10px;font-weight:bold}
-.hero{padding:45px 20px;text-align:center;background:#f8e9df}
-.hero h2{font-size:30px;color:#744c40}
-.hero p{line-height:2}
-.hero img{width:90%;max-width:650px;height:260px;object-fit:cover;border-radius:22px}
-button{background:#9c6556;color:white;border:0;border-radius:20px;padding:11px 18px;font-family:inherit;cursor:pointer}
-section{padding:35px 18px}
-h2{text-align:center;color:#744c40}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:auto}
-.card{background:white;border-radius:18px;padding:13px;box-shadow:0 5px 18px #0001;text-align:center}
-.card img{width:100%;height:175px;object-fit:cover;border-radius:13px}
-.card h3{margin:10px 0 4px}
-.price{color:#a45f4d;font-weight:bold}
-.card p{font-size:14px;line-height:1.8}
-.natural{background:#eee9dc;text-align:center}
-.natural p{line-height:2}
-.about{text-align:center;line-height:2;max-width:800px;margin:auto}
-#cart{background:white;padding:20px;border-radius:18px;max-width:600px;margin:20px auto}
-#items p{border-bottom:1px solid #eee;padding:8px}
-footer{background:#65483c;color:white;text-align:center;padding:25px}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.85}
+a{text-decoration:none;color:inherit}
+button,select,textarea{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(1100px,92%);margin:auto}
+.top{background:var(--brown);color:white;text-align:center;padding:6px;font-size:.85rem}
+header{position:sticky;top:0;background:#fbf5eef2;backdrop-filter:blur(10px);z-index:10;border-bottom:1px solid var(--line)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.35rem;font-weight:800;color:var(--brown)}
+.logo span{color:#bd7d70}
+.links{display:flex;gap:18px;font-size:.9rem;color:#70564b}
+.btn{border:0;background:var(--brown);color:white;padding:10px 18px;border-radius:25px;font-weight:700}
+.btn2{border:1px solid #d8b9ac;color:var(--brown);padding:9px 17px;border-radius:25px;font-weight:700}
+.hero{padding:42px 0}
+.heroGrid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.4;color:var(--brown);margin:8px 0}
+.hero p,.muted{color:var(--muted)}
+.hero img{width:100%;height:360px;object-fit:cover;border-radius:35% 35% 20px 20px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.ribbon{background:#f1e3d9;text-align:center;padding:11px;color:#76584d}
+section{padding:50px 0}
+.head{text-align:center;margin-bottom:25px}
+.head h2{color:var(--brown);font-size:1.9rem;margin:0}
+.head p{color:var(--muted);margin:5px}
+.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:20px}
+.filter{border:1px solid #ddc9bd;background:transparent;color:var(--brown);border-radius:22px;padding:7px 14px}
+.filter.active{background:var(--brown);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 7px 20px #543b2b0b}
+.card img{width:100%;height:190px;object-fit:cover}
+.body{padding:15px}
+.tag{background:#f7e8e1;color:#a36559;padding:2px 9px;border-radius:15px;font-size:.75rem}
+.body h3{color:var(--brown);margin:8px 0 2px}
+.desc{color:var(--muted);font-size:.85rem;min-height:48px}
+.meta{display:flex;justify-content:space-between;gap:6px;font-size:.85rem;margin:10px 0}
+.price{font-weight:800;color:var(--brown)}
+.add{width:100%;border:0;background:var(--rose);color:#4b3029;border-radius:22px;padding:9px;font-weight:700}
+.natural{background:#eeeae0}
+.naturalBox{background:white;border-radius:20px;padding:22px;text-align:center;max-width:800px;margin:auto}
+.naturalBox h3{color:var(--brown)}
+.custom{background:#f5e5dd}
+.customGrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form,.preview{background:white;border:1px solid var(--line);border-radius:18px;padding:20px}
+.field{margin:12px 0}
+.field label{display:block;font-weight:700;color:var(--brown);margin-bottom:5px}
+.field select,.field textarea{width:100%;padding:10px;border:1px solid #ddc9bd;border-radius:10px;background:white}
+.field textarea{min-height:75px}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.swatch{width:34px;height:34px;border-radius:50%;border:2px solid white;outline:1px solid #cbb;padding:0}
+.swatch.selected{outline:3px solid var(--brown)}
+.preview{text-align:center}
+.cake{width:190px;height:110px;background:#d7a47c;border-radius:16px;margin:35px auto 12px;position:relative}
+.icing{position:absolute;top:-18px;left:0;width:100%;height:43px;border-radius:50%;background:#fff0e8}
+.preview small{color:var(--muted)}
+.about{text-align:center;max-width:780px}
+.contact{background:var(--brown);color:white;text-align:center;padding:30px;border-radius:20px}
+.contact p{color:#f0ddd4}
+.contact a{display:inline-block;background:#f5e2da;color:var(--brown);padding:9px 18px;border-radius:25px;font-weight:700}
+footer{text-align:center;color:var(--muted);padding:24px}
+.panel{position:fixed;inset:0;background:#1c120e88;z-index:30;display:none;justify-content:flex-end}
+.panel.open{display:flex}
+.cart{background:white;width:min(410px,100%);height:100%;padding:20px;overflow:auto}
+.cartItem{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}
+.qty{display:flex;gap:8px;align-items:center}
+.qty button{border:0;border-radius:50%;width:25px;height:25px;background:#f5e2da}
+.checkout{display:block;background:var(--sage);color:white;text-align:center;padding:12px;border-radius:24px;margin-top:15px}
+.close{float:left;border:0;border-radius:50%;padding:6px 12px}
+@media(max-width:780px){
+.links{display:none}
+.heroGrid,.customGrid{grid-template-columns:1fr}
+.hero img{height:260px;order:-1}
+.grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+.grid{grid-template-columns:1fr}
+.hero img{height:230px}
+}
 </style>
 </head>
 <body>
+
+<div class="top">پخت خانگی آسان‌تر، با ترکیب‌های خوش‌طعم خانه شیرین 🍰</div>
+
 <header>
-<h1>🍰 خانه شیرین 🍰</h1>
-<p>طعم شیرین لحظه‌های زندگی</p>
-</header>
-<nav>
+<div class="wrap nav">
+<a class="logo" href="#home">خانه <span>شیرین</span> ♡</a>
+<nav class="links">
 <a href="#home">خانه</a>
 <a href="#products">محصولات</a>
-<a href="#natural">شیرین‌کننده‌ها</a>
+<a href="#natural">شیرین‌کننده</a>
+<a href="#custom">تزئین کیک</a>
 <a href="#about">درباره ما</a>
-<a href="#cart">سبد خرید</a>
 </nav>
-
-<div class="hero" id="home">
-<h2>با عشق بپز، با لذت نوش جان کن!</h2>
-<p>انواع پودر کیک خانگی با طعم‌های خوشمزه و شیرین‌کننده‌های طبیعی</p>
-<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900" alt="کیک خانگی">
-<br><br>
-<a href="#products"><button>مشاهده محصولات</button></a>
+<button class="btn" onclick="toggleCart()">سبد خرید <b id="count">۰</b></button>
 </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="wrap heroGrid">
+<div>
+<b style="color:#b4776b">از پودر تا یک اثر هنری خوشمزه</b>
+<h1>کیکت رو بساز،<br>به سبک خودت تزئینش کن!</h1>
+<p>با پودرهای آماده خانه شیرین، عطر کیک تازه را به خانه بیاور. طعم دلخواهت را انتخاب کن و با خامه‌های رنگی، کیکت را به سلیقه خودت تزئین کن.</p>
+<div class="actions">
+<a class="btn" href="#products">خرید محصولات</a>
+<a class="btn2" href="#custom">طراحی تزئین کیک</a>
+</div>
+</div>
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85" alt="کیک تزئین شده">
+</div>
+</section>
+
+<div class="ribbon">♡ پودر کیک خانگی • ترکیب‌های متنوع • تجربه شیرین خلاقیت ♡</div>
 
 <section id="products">
-<h2>🧁 محصولات خانه شیرین</h2>
-<div class="products">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500" alt="کیک وانیلی">
-<h3>پودر کیک وانیلی</h3>
-<p>لطیف، خوش‌عطر و مناسب عصرانه</p>
-<div class="price">۱۴۵٬۰۰۰ تومان</div>
-<button onclick="add('پودر کیک وانیلی',145000)">افزودن به سبد</button>
+<div class="wrap">
+<div class="head">
+<h2>محصولات خانه شیرین</h2>
+<p>وزن و قیمت هر بسته کنار محصول درج شده است.</p>
 </div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500" alt="کیک شکلاتی">
-<h3>پودر کیک شکلاتی</h3>
-<p>طعم غنی شکلات برای عاشقان کاکائو</p>
-<div class="price">۱۶۵٬۰۰۰ تومان</div>
-<button onclick="add('پودر کیک شکلاتی',165000)">افزودن به سبد</button>
+<div class="filters">
+<button class="filter active" onclick="filterProducts('all',this)">همه</button>
+<button class="filter" onclick="filterProducts('cake',this)">پودر کیک</button>
+<button class="filter" onclick="filterProducts('dessert',this)">دسر و تیرامیسو</button>
+<button class="filter" onclick="filterProducts('cookie',this)">پودر کوکی</button>
+<button class="filter" onclick="filterProducts('natural',this)">با استویا</button>
 </div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=500" alt="ردولوت">
-<h3>پودر کیک ردولوت</h3>
-<p>رنگ زیبا و طعمی متفاوت</p>
-<div class="price">۱۸۵٬۰۰۰ تومان</div>
-<button onclick="add('پودر کیک ردولوت',185000)">افزودن به سبد</button>
-</div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500" alt="کیک زعفرانی">
-<h3>پودر کیک زعفرانی</h3>
-<p>عطر دلنشین زعفران ایرانی</p>
-<div class="price">۱۷۵٬۰۰۰ تومان</div>
-<button onclick="add('پودر کیک زعفرانی',175000)">افزودن به سبد</button>
-</div>
+<div class="grid" id="productsGrid"></div>
 </div>
 </section>
 
 <section class="natural" id="natural">
-<h2>🌿 شیرین‌کننده‌های طبیعی</h2>
-<div class="products">
-<div class="card"><h3>استویا</h3><p>شیرین‌کننده گیاهی</p><div class="price">۱۲۰٬۰۰۰ تومان</div><button onclick="add('استویا',120000)">افزودن به سبد</button></div>
-<div class="card"><h3>عسل طبیعی 🍯</h3><p>با عطر و طعم دلنشین</p><div class="price">۱۵۰٬۰۰۰ تومان</div><button onclick="add('عسل طبیعی',150000)">افزودن به سبد</button></div>
-<div class="card"><h3>شیره خرما 🌴</h3><p>شیرین و خوش‌طعم</p><div class="price">۹۵٬۰۰۰ تومان</div><button onclick="add('شیره خرما',95000)">افزودن به سبد</button></div>
+<div class="wrap">
+<div class="head">
+<h2>انتخاب شیرین‌کننده طبیعی</h2>
+<p>برای تجربه‌ای متفاوت در شیرینی‌پزی خانگی</p>
+</div>
+<div class="naturalBox">
+<div style="font-size:2.4rem">🌿</div>
+<h3>پودر کیک با شیرین‌کننده استویا</h3>
+<p class="muted">نسخه‌ای با شیرین‌کننده استویا برای انتخابی متفاوت. ترکیبات و برچسب محصول را پیش از مصرف بررسی کنید؛ مناسب‌بودن برای رژیم یا شرایط پزشکی بدون بررسی فرمول قابل تضمین نیست.</p>
+<a class="btn" href="#products">مشاهده محصول</a>
+</div>
 </div>
 </section>
 
-<section id="about" class="about">
-<h2>درباره خانه شیرین ❤️</h2>
-<p>خانه شیرین یک ایده کسب‌وکار خانگی برای تولید و عرضه پودر کیک‌های آماده با طعم‌های متنوع است. هدف ما آسان‌تر کردن شیرینی‌پزی خانگی و ایجاد تجربه‌ای خوشمزه و لذت‌بخش است.</p>
+<section class="custom" id="custom">
+<div class="wrap">
+<div class="head">
+<h2>🎨 کیکت رو خودت تزئین کن!</h2>
+<p>رنگ خامه و سبک تزئین را انتخاب کن؛ سفارش دلخواهت را در واتساپ بفرست.</p>
+</div>
+<div class="customGrid">
+<div class="form">
+
+<div class="field">
+<label for="cakeType">طعم کیک</label>
+<select id="cakeType">
+<option>وانیلی</option>
+<option>شکلاتی</option>
+<option>ردولوت</option>
+<option>زعفرانی</option>
+<option>کیک دلخواه مشتری</option>
+</select>
+</div>
+
+<div class="field">
+<label>رنگ خامه</label>
+<div class="swatches" id="swatches">
+<button class="swatch selected" style="background:#fff0e8" data-color="صورتی ملایم"></button>
+<button class="swatch" style="background:#f5a9b8" data-color="صورتی"></button>
+<button class="swatch" style="background:#a9c9ee" data-color="آبی آسمانی"></button>
+<button class="swatch" style="background:#b8d6a5" data-color="سبز پاستلی"></button>
+<button class="swatch" style="background:#d9b5e8" data-color="یاسی"></button>
+<button class="swatch" style="background:#fff" data-color="سفید"></button>
+<button class="swatch" style="background:#f4d36c" data-color="زرد"></button>
+</div>
+</div>
+
+<div class="field">
+<label for="style">مدل تزئین</label>
+<select id="style">
+<option>خامه‌کشی ساده و مینیمال</option>
+<option>شکوفه‌های خامه‌ای رنگی</option>
+<option>حاشیه و موج خامه‌ای</option>
+<option>طرح گل و قلب</option>
+<option>تزئین فانتزی و کودکانه</option>
+</select>
+</div>
+
+<div class="field">
+<label for="size">اندازه کیک</label>
+<select id="size">
+<option>۶ تا ۸ نفره</option>
+<option>۱۰ تا ۱۲ نفره</option>
+<option>۱۵ تا ۲۰ نفره</option>
+</select>
+</div>
+
+<div class="field">
+<label for="note">توضیحات یا ایده دلخواهت</label>
+<textarea id="note" placeholder="مثلاً گل‌های صورتی و نوشته تولدت مبارک..."></textarea>
+</div>
+
+<button class="btn" style="width:100%" onclick="sendCustom()">ارسال طرح در واتساپ</button>
+</div>
+
+<div class="preview">
+<h3 style="color:var(--brown)">پیش‌نمایش انتخاب تو</h3>
+<div class="cake"><div class="icing" id="icing"></div></div>
+<b id="previewColor">خامه صورتی ملایم</b><br>
+<small id="previewStyle">خامه‌کشی ساده و مینیمال</small>
+<p class="muted">این پیش‌نمایش نمونه رنگ است؛ طرح نهایی پس از هماهنگی سفارش مشخص می‌شود.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="wrap about">
+<div class="head"><h2>داستان خانه شیرین</h2></div>
+<p class="muted">خانه شیرین یک ایده کسب‌وکار خانگی برای آماده‌سازی پودر کیک، دسر و کوکی است. هدف ما ساده‌تر و خلاقانه‌تر کردن شیرینی‌پزی در خانه است؛ از انتخاب طعم پودر تا طراحی خامه و تزئین کیک با سلیقه خود مشتری.</p>
+</div>
 </section>
 
 <section>
-<h2>🛒 سبد خرید شما</h2>
-<div id="cart">
-<div id="items">هنوز محصولی انتخاب نکرده‌اید.</div>
-<strong id="total">جمع کل: ۰ تومان</strong>
+<div class="wrap">
+<div class="contact">
+<h2>برای سفارش و مشاوره با ما در ارتباط باش</h2>
+<p>شماره تماس و واتساپ خانه شیرین: 09191840917</p>
+<a href="https://wa.me/989191840917" target="_blank" rel="noopener">پیام در واتساپ</a>
+</div>
 </div>
 </section>
+</main>
 
-<footer>
-<h3>خانه شیرین 🍰</h3>
-<p>یک کسب‌وکار خانگی با طعم خلاقیت</p>
-<p>© تمامی حقوق محفوظ است</p>
-</footer>
+<footer>© خانه شیرین | با عشق آماده شده برای لحظه‌های شیرین شما 🍰</footer>
+
+<div class="panel" id="panel" onclick="if(event.target===this)toggleCart()">
+<div class="cart">
+<button class="close" onclick="toggleCart()">×</button>
+<h2>سبد خرید</h2>
+<div id="cartItems"></div>
+<b id="total"></b>
+<a class="checkout" id="checkout" href="#" target="_blank" rel="noopener">ثبت سفارش در واتساپ</a>
+</div>
+</div>
 
 <script>
-let cart=[];
-function add(name,price){
-cart.push({name,price});
-showCart();
+const phone='989191840917';
+
+const products=[
+{id:1,name:'پودر کیک وانیلی',cat:'cake',weight:'۵۰۰ گرم',price:245000,tag:'پرطرفدار',desc:'بافت لطیف و عطر ملایم وانیل',img:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700'},
+{id:2,name:'پودر کیک شکلاتی',cat:'cake',weight:'۵۰۰ گرم',price:265000,tag:'شکلاتی',desc:'انتخابی خوش‌طعم برای دوستداران کاکائو',img:'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=700'},
+{id:3,name:'پودر کیک ردولوت',cat:'cake',weight:'۵۰۰ گرم',price:285000,tag:'ویژه',desc:'رنگ جذاب و طعمی متفاوت',img:'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=700'},
+{id:4,name:'پودر کیک زعفرانی',cat:'cake',weight:'۵۰۰ گرم',price:295000,tag:'ایرانی',desc:'عطر زعفران برای کیکی خوش‌رنگ',img:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700'},
+{id:5,name:'پودر کیک دارچینی',cat:'cake',weight:'۵۰۰ گرم',price:255000,tag:'خوش‌عطر',desc:'طعم گرم دارچین برای عصرانه',img:'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=700'},
+{id:6,name:'پودر کیک با استویا',cat:'natural',weight:'۳۵۰ گرم',price:295000,tag:'با استویا',desc:'نسخه دارای شیرین‌کننده استویا؛ ترکیبات را بررسی کنید',img:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700'},
+{id:7,name:'پودر تیرامیسو',cat:'dessert',weight:'۳۰۰ گرم',price:265000,tag:'دسر',desc:'مناسب آماده‌سازی دسر تیرامیسو در خانه',img:'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=700'},
+{id:8,name:'پودر کوکی شکلاتی',cat:'cookie',weight:'۴۰۰ گرم',price:275000,tag:'کوکی',desc:'برای تهیه کوکی خانگی با طعم شکلات',img:'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=700'},
+{id:9,name:'پودر کوکی گردویی',cat:'cookie',weight:'۴۰۰ گرم',price:295000,tag:'کوکی',desc:'ترکیب پیشنهادی برای کوکی گردویی',img:'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=700'}
+];
+
+let cart={},creamColor='صورتی ملایم';
+
+const money=n=>new Intl.NumberFormat('fa-IR').format(n)+' تومان';
+
+function render(list=products){
+document.getElementById('productsGrid').innerHTML=list.map(p=>`
+<article class="card">
+<img src="${p.img}" alt="${p.name}" loading="lazy">
+<div class="body">
+<span class="tag">${p.tag}</span>
+<h3>${p.name}</h3>
+<p class="desc">${p.desc}</p>
+<div class="meta">
+<span>وزن: ${p.weight}</span>
+<b class="price">${money(p.price)}</b>
+</div>
+<button class="add" onclick="add(${p.id})">افزودن به سبد خرید +</button>
+</div>
+</article>`).join('');
 }
-function showCart(){
-let items=document.getElementById('items');
-let total=cart.reduce((sum,p)=>sum+p.price,0);
-items.innerHTML=cart.length?cart.map(p=>'<p>'+p.name+' - '+p.price.toLocaleString('fa-IR')+' تومان</p>').join(''):'سبد خرید خالی است';
-document.getElementById('total').innerText='جمع کل: '+total.toLocaleString('fa-IR')+' تومان';
+
+function filterProducts(cat,btn){
+document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+btn.classList.add('active');
+render(cat==='all'?products:products.filter(p=>p.cat===cat));
 }
+
+function add(id){
+cart[id]=(cart[id]||0)+1;
+updateCart();
+}
+
+function qty(id,d){
+cart[id]+=d;
+if(cart[id]<=0)delete cart[id];
+updateCart();
+}
+
+function updateCart(){
+let entries=Object.entries(cart);
+let count=entries.reduce((s,[id,q])=>s+q,0);
+let total=0;
+
+document.getElementById('count').textContent=count.toLocaleString('fa-IR');
+
+document.getElementById('cartItems').innerHTML=entries.length?
+entries.map(([id,q])=>{
+let p=products.find(x=>x.id==id);
+total+=p.price*q;
+return `<div class="cartItem">
+<div><b>${p.name}</b><br><small>${p.weight} | ${money(p.price)}</small></div>
+<div class="qty">
+<button onclick="qty(${id},-1)">−</button>
+${q}
+<button onclick="qty(${id},1)">+</button>
+</div>
+</div>`;
+}).join(''):'<p>سبد خرید خالی است 🍰</p>';
+
+document.getElementById('total').textContent=entries.length?'جمع کل: '+money(total):'';
+
+let msg='سلام، برای سفارش از خانه شیرین پیام می‌دهم:%0A'+
+entries.map(([id,q])=>{
+let p=products.find(x=>x.id==id);
+return encodeURIComponent(p.name+' ('+p.weight+') × '+q);
+}).join('%0A')+'%0A'+encodeURIComponent('جمع کل: '+money(total));
+
+document.getElementById('checkout').href='https://wa.me/'+phone+'?text='+msg;
+document.getElementById('checkout').style.display=entries.length?'block':'none';
+}
+
+function toggleCart(){
+document.getElementById('panel').classList.toggle('open');
+}
+
+document.querySelectorAll('.swatch').forEach(b=>
+b.addEventListener('click',()=>{
+document.querySelectorAll('.swatch').forEach(x=>x.classList.remove('selected'));
+b.classList.add('selected');
+creamColor=b.dataset.color;
+document.getElementById('icing').style.background=b.style.backgroundColor;
+document.getElementById('previewColor').textContent='خامه '+creamColor;
+})
+);
+
+document.getElementById('style').addEventListener('change',e=>
+document.getElementById('previewStyle').textContent=e.target.value
+);
+
+function sendCustom(){
+let msg='سلام، سفارش تزئین کیک دارم.%0A'+
+encodeURIComponent('طعم: '+document.getElementById('cakeType').value)+'%0A'+
+encodeURIComponent('رنگ خامه: '+creamColor)+'%0A'+
+encodeURIComponent('مدل: '+document.getElementById('style').value)+'%0A'+
+encodeURIComponent('اندازه: '+document.getElementById('size').value)+'%0A'+
+encodeURIComponent('توضیحات: '+(document.getElementById('note').value||'ندارم'));
+window.open('https://wa.me/'+phone+'?text='+msg,'_blank');
+}
+
+render();
+updateCart();
 </script>
 </body>
 </html>
