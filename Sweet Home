@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbf4ed">
+<title>خانه شیرین | پودر کیک خانگی</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+:root{--cream:#fbf4ed;--pink:#e8b9ad;--brown:#593c32;--dark:#30231f;--muted:#806e65;--white:#fffdfa;--green:#78866a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--dark);font-family:'Vazirmatn',Tahoma,sans-serif;line-height:1.8}a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#fbf4edeF;backdrop-filter:blur(12px);border-bottom:1px solid #eadbd1}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.logo{font-size:1.35rem;font-weight:800;color:var(--brown)}.logo span{color:#c17d70}.links{display:flex;gap:25px;color:#6d554b;font-size:.94rem}.cart-btn,.primary{border:0;border-radius:999px;background:var(--brown);color:white;padding:10px 19px;font-weight:700}.cart-btn b{background:#f4d9d0;color:var(--brown);border-radius:50%;padding:1px 7px;margin-right:5px}
+.hero{padding:58px 0 48px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px}.eyebrow{color:#b4776b;font-weight:700}.hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.35;color:var(--brown);margin:12px 0}.hero p{color:var(--muted);max-width:550px}.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:24px}.secondary{border:1px solid #d9b8ab;color:var(--brown);border-radius:999px;padding:9px 18px;font-weight:700}.hero-img{height:390px;border-radius:38% 38% 18px 18px;overflow:hidden;box-shadow:0 20px 50px #68463822}.hero-img img{width:100%;height:100%;object-fit:cover}
+.strip{background:#f2e4d9;padding:15px 0;text-align:center;color:#76584d;font-size:.94rem}.section{padding:62px 0}.section-head{text-align:center;margin-bottom:28px}.section-head h2{font-size:2rem;color:var(--brown);margin:0 0 6px}.section-head p{color:var(--muted);margin:0}.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:24px 0 30px}.filter{border:1px solid #e2cfc3;background:transparent;color:#70574d;border-radius:30px;padding:8px 17px}.filter.active{background:var(--brown);color:white;border-color:var(--brown)}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.product{background:var(--white);border:1px solid #f0e5dc;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px #563b2b0b;transition:.2s}.product:hover{transform:translateY(-4px);box-shadow:0 14px 30px #563b2b15}.product img{width:100%;height:205px;object-fit:cover;display:block}.product-body{padding:17px}.tag{display:inline-block;background:#f8e8e1;color:#a36559;padding:3px 10px;border-radius:20px;font-size:.75rem}.product h3{margin:8px 0 4px;color:var(--brown)}.product p{font-size:.88rem;color:var(--muted);min-height:48px;margin:0 0 13px}.product-foot{display:flex;align-items:center;justify-content:space-between;gap:8px}.price{font-weight:800;color:var(--brown)}.add{border:0;background:#e8b9ad;color:#4b3029;border-radius:22px;padding:8px 13px;font-weight:700}
+.natural{background:#eee9df}.natural-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.natural-card{background:#fffdfa;padding:23px;border-radius:18px;text-align:center}.natural-card .emoji{font-size:2.2rem}.natural-card h3{color:var(--brown);margin:7px 0}.natural-card p{color:var(--muted);font-size:.9rem;margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.about-img{height:330px;border-radius:24px;overflow:hidden}.about-img img{width:100%;height:100%;object-fit:cover}.about h2{color:var(--brown);font-size:2rem}.about p{color:var(--muted)}.checks{padding:0;list-style:none}.checks li{margin:8px 0}.checks li:before{content:"✓";color:var(--green);font-weight:800;margin-left:9px}
+.contact{background:#f1e3d9;text-align:center;padding:48px 20px;border-radius:25px}.contact h2{color:var(--brown);margin:0}.contact p{color:var(--muted)}footer{text-align:center;padding:25px;color:#806e65;font-size:.88rem}
+.cart-panel{position:fixed;inset:0;background:#1d141266;z-index:40;display:none;justify-content:flex-end}.cart-panel.open{display:flex}.cart{background:var(--white);width:min(420px,100%);height:100%;padding:22px;overflow:auto;box-shadow:-10px 0 40px #0002}.cart-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:#f3e5dd;border-radius:50%;width:36px;height:36px;font-size:1.2rem}.cart-item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #eee2d9;padding:13px 0}.qty{display:flex;align-items:center;gap:9px}.qty button{border:0;background:#f1e3d9;border-radius:50%;width:25px;height:25px}.cart-total{font-weight:800;font-size:1.1rem;margin:20px 0}.checkout{display:block;text-align:center;background:var(--green);color:white;padding:12px;border-radius:25px;font-weight:700}.empty{color:var(--muted);text-align:center;padding:35px 0}
+@media(max-width:800px){.links{display:none}.hero-grid,.about-grid{grid-template-columns:1fr}.hero{padding-top:35px}.hero-img{height:280px;order:-1}.products{grid-template-columns:repeat(2,1fr)}.natural-grid{grid-template-columns:1fr}.about-img{height:250px}}
+@media(max-width:520px){.products{grid-template-columns:1fr}.product img{height:220px}.nav{height:66px}.hero{padding-bottom:30px}.section{padding:45px 0}.hero h1{font-size:2.25rem}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="logo" href="#">خانه <span>شیرین</span> 🍰</a>
+<nav class="links"><a href="#home">خانه</a><a href="#products">محصولات</a><a href="#natural">شیرین‌کننده طبیعی</a><a href="#about">درباره ما</a><a href="#contact">تماس با ما</a></nav>
+<button class="cart-btn" onclick="toggleCart()">سبد خرید <b id="cartCount">۰</b></button>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+<div><span class="eyebrow">طعم شیرینِ لحظه‌های خانگی</span><h1>کیک خونگی،<br>با عطرِ عشق و سادگی</h1><p>با پودر کیک‌های خانگی خانه شیرین، در چند قدم یک کیک خوش‌عطر و لطیف آماده کن. ترکیبات ساده، طعم‌های دوست‌داشتنی و انتخاب‌های متنوع برای شیرین‌پسندها.</p><div class="hero-actions"><a class="primary" href="#products">دیدن محصولات</a><a class="secondary" href="#about">داستان خانه شیرین</a></div></div>
+<div class="hero-img"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1100&q=85" alt="کیک شکلاتی خانگی"></div>
+</div></section>
+<div class="strip">♡ تهیه‌شده با عشق • مناسبِ دورهمی‌های شیرین • امکان انتخاب شیرین‌کننده طبیعی ♡</div>
+<section class="section" id="products"><div class="container">
+<div class="section-head"><h2>محصولات خوشمزه ما</h2><p>طعم مورد علاقه‌ات را انتخاب کن و به سبد خرید اضافه کن.</p></div>
+<div class="filters"><button class="filter active" onclick="filterProducts('all',this)">همه محصولات</button><button class="filter" onclick="filterProducts('cake',this)">پودر کیک</button><button class="filter" onclick="filterProducts('sweet',this)">شیرین‌کننده طبیعی</button></div>
+<div class="products" id="productGrid"></div>
+</div></section>
+<section class="section natural" id="natural"><div class="container"><div class="section-head"><h2>شیرینی از دل طبیعت</h2><p>برای تنوع در طعم و انتخاب، شیرین‌کننده‌های طبیعی هم در کنار محصولات ما هستند.</p></div>
+<div class="natural-grid">
+<div class="natural-card"><div class="emoji">🌿</div><h3>استویا</h3><p>شیرین‌کننده‌ای گیاهی که در برخی دستورها می‌تواند جایگزین بخشی از شکر شود.</p></div>
+<div class="natural-card"><div class="emoji">🍯</div><h3>عسل طبیعی</h3><p>با عطر و طعم ویژه؛ مناسب برای دستورهای متناسب با عسل.</p></div>
+<div class="natural-card"><div class="emoji">🌴</div><h3>شیره خرما</h3><p>با طعم کاراملی و دلنشین برای تجربه‌ای متفاوت در شیرینی‌پزی.</p></div>
+</div></div></section>
+<section class="section about" id="about"><div class="container about-grid">
+<div class="about-img"><img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=1000&q=85" alt="کاپ‌کیک‌های خانگی"></div>
+<div><span class="eyebrow">درباره خانه شیرین</span><h2>یک تجربه خانگی، ساده و خوش‌طعم</h2><p>خانه شیرین یک کسب‌وکار خانگی با ایده آماده‌سازی پودر کیک‌های متنوع است؛ محصولاتی که کمک می‌کنند در خانه، سریع‌تر و راحت‌تر کیک دلخواهت را بپزی.</p><ul class="checks"><li>تنوع طعم برای سلیقه‌های مختلف</li><li>راهنمای آماده‌سازی همراه محصول</li><li>امکان انتخاب شیرین‌کننده متناسب با دستور</li></ul></div>
+</div></section>
+<section class="section" id="contact"><div class="container"><div class="contact"><h2>برای سفارش یا پرسش، با ما در ارتباط باش</h2><p>سفارش‌ها در نسخه نمایشی سایت از طریق واتساپ ثبت می‌شوند.</p><a class="primary" href="https://wa.me/989121234567" target="_blank" rel="noopener">ثبت سفارش در واتساپ</a></div></div></section>
+</main>
+<footer>© خانه شیرین | یک پروژه کسب‌وکار خانگی با طعم خلاقیت 🍰</footer>
+<div class="cart-panel" id="cartPanel" onclick="if(event.target===this)toggleCart()"><div class="cart"><div class="cart-head"><h2>سبد خرید شما</h2><button class="close" onclick="toggleCart()">×</button></div><div id="cartItems"></div><div class="cart-total" id="cartTotal"></div><a id="checkout" class="checkout" href="#" target="_blank" rel="noopener">نهایی‌کردن سفارش در واتساپ</a></div></div>
+<script>
+const products=[
+{id:1,name:'پودر کیک وانیلی',type:'cake',tag:'پرطرفدار',desc:'لطیف و خوش‌عطر؛ مناسب عصرانه و جشن‌های کوچک.',price:145000,img:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80'},
+{id:2,name:'پودر کیک شکلاتی',type:'cake',tag:'شکلاتی',desc:'با طعم کاکائویی دلچسب برای عاشقان شکلات.',price:165000,img:'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80'},
+{id:3,name:'پودر کیک ردولوت',type:'cake',tag:'ویژه',desc:'رنگ جذاب و بافت نرم برای پذیرایی متفاوت.',price:185000,img:'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=700&q=80'},
+{id:4,name:'پودر کیک زعفرانی',type:'cake',tag:'ایرانی',desc:'عطر دلنشین زعفران برای یک کیک خوش‌رنگ.',price:175000,img:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=700&q=80'},
+{id:5,name:'استویا',type:'sweet',tag:'گیاهی',desc:'شیرین‌کننده گیاهی؛ مقدار مصرف را مطابق دستور تنظیم کنید.',price:120000,img:'https://images.unsplash.com/photo-1518843875459-f738682238a6?auto=format&fit=crop&w=700&q=80'},
+{id:6,name:'شیره خرما',type:'sweet',tag:'طبیعی',desc:'شیرین‌کننده‌ای با عطر و طعم خرما.',price:95000,img:'https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=700&q=80'}
+];
+let cart={};
+const money=n=>new Intl.NumberFormat('fa-IR').format(n)+' تومان';
+function renderProducts(list=products){document.getElementById('productGrid').innerHTML=list.map(p=>`<article class="product"><img src="${p.img}" alt="${p.name}" loading="lazy"><div class="product-body"><span class="tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p><div class="product-foot"><span class="price">${money(p.price)}</span><button class="add" onclick="addToCart(${p.id})">افزودن +</button></div></div></article>`).join('')}
+function filterProducts(type,btn){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderProducts(type==='all'?products:products.filter(p=>p.type===type))}
+function addToCart(id){cart[id]=(cart[id]||0)+1;updateCart()}
+function changeQty(id,d){cart[id]+=d;if(cart[id]<=0)delete cart[id];updateCart()}
+function updateCart(){let count=Object.values(cart).reduce((a,b)=>a+b,0);document.getElementById('cartCount').textContent=new Intl.NumberFormat('fa-IR').format(count);let entries=Object.entries(cart);let total=0;document.getElementById('cartItems').innerHTML=entries.length?entries.map(([id,q])=>{let p=products.find(x=>x.id==id);total+=p.price*q;return `<div class="cart-item"><div><b>${p.name}</b><br><small>${money(p.price)}</small></div><div class="qty"><button onclick="changeQty(${id},-1)">−</button>${q}<button onclick="changeQty(${id},1)">+</button></div></div>`}).join(''):'<div class="empty">سبد خریدت هنوز خالیه 🍰</div>';document.getElementById('cartTotal').textContent=entries.length?'جمع کل: '+money(total):'';let message='سلام، برای سفارش این محصولات پیام می‌دهم:%0A'+entries.map(([id,q])=>{let p=products.find(x=>x.id==id);return encodeURIComponent(p.name+' × '+q)}).join('%0A')+'%0Aجمع کل: '+encodeURIComponent(money(total));document.getElementById('checkout').href='https://wa.me/989121234567?text='+message;document.getElementById('checkout').style.display=entries.length?'block':'none'}
+function toggleCart(){document.getElementById('cartPanel').classList.toggle('open')}
+renderProducts();updateCart();
+</script>
+</body></html>
