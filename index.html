@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>خانه شیرین | فروشگاه پودر کیک</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap');
+*{box-sizing:border-box}
+body{margin:0;background:#fff8f1;color:#49342d;font-family:Vazirmatn,Tahoma,sans-serif}
+header{background:#65483c;color:white;padding:18px;text-align:center}
+header h1{margin:0;font-size:28px}
+nav{background:#f0d9cc;padding:13px;text-align:center}
+nav a{color:#65483c;text-decoration:none;margin:0 10px;font-weight:bold}
+.hero{padding:45px 20px;text-align:center;background:#f8e9df}
+.hero h2{font-size:30px;color:#744c40}
+.hero p{line-height:2}
+.hero img{width:90%;max-width:650px;height:260px;object-fit:cover;border-radius:22px}
+button{background:#9c6556;color:white;border:0;border-radius:20px;padding:11px 18px;font-family:inherit;cursor:pointer}
+section{padding:35px 18px}
+h2{text-align:center;color:#744c40}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:1000px;margin:auto}
+.card{background:white;border-radius:18px;padding:13px;box-shadow:0 5px 18px #0001;text-align:center}
+.card img{width:100%;height:175px;object-fit:cover;border-radius:13px}
+.card h3{margin:10px 0 4px}
+.price{color:#a45f4d;font-weight:bold}
+.card p{font-size:14px;line-height:1.8}
+.natural{background:#eee9dc;text-align:center}
+.natural p{line-height:2}
+.about{text-align:center;line-height:2;max-width:800px;margin:auto}
+#cart{background:white;padding:20px;border-radius:18px;max-width:600px;margin:20px auto}
+#items p{border-bottom:1px solid #eee;padding:8px}
+footer{background:#65483c;color:white;text-align:center;padding:25px}
+</style>
+</head>
+<body>
+<header>
+<h1>🍰 خانه شیرین 🍰</h1>
+<p>طعم شیرین لحظه‌های زندگی</p>
+</header>
+<nav>
+<a href="#home">خانه</a>
+<a href="#products">محصولات</a>
+<a href="#natural">شیرین‌کننده‌ها</a>
+<a href="#about">درباره ما</a>
+<a href="#cart">سبد خرید</a>
+</nav>
+
+<div class="hero" id="home">
+<h2>با عشق بپز، با لذت نوش جان کن!</h2>
+<p>انواع پودر کیک خانگی با طعم‌های خوشمزه و شیرین‌کننده‌های طبیعی</p>
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900" alt="کیک خانگی">
+<br><br>
+<a href="#products"><button>مشاهده محصولات</button></a>
+</div>
+
+<section id="products">
+<h2>🧁 محصولات خانه شیرین</h2>
+<div class="products">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500" alt="کیک وانیلی">
+<h3>پودر کیک وانیلی</h3>
+<p>لطیف، خوش‌عطر و مناسب عصرانه</p>
+<div class="price">۱۴۵٬۰۰۰ تومان</div>
+<button onclick="add('پودر کیک وانیلی',145000)">افزودن به سبد</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500" alt="کیک شکلاتی">
+<h3>پودر کیک شکلاتی</h3>
+<p>طعم غنی شکلات برای عاشقان کاکائو</p>
+<div class="price">۱۶۵٬۰۰۰ تومان</div>
+<button onclick="add('پودر کیک شکلاتی',165000)">افزودن به سبد</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=500" alt="ردولوت">
+<h3>پودر کیک ردولوت</h3>
+<p>رنگ زیبا و طعمی متفاوت</p>
+<div class="price">۱۸۵٬۰۰۰ تومان</div>
+<button onclick="add('پودر کیک ردولوت',185000)">افزودن به سبد</button>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500" alt="کیک زعفرانی">
+<h3>پودر کیک زعفرانی</h3>
+<p>عطر دلنشین زعفران ایرانی</p>
+<div class="price">۱۷۵٬۰۰۰ تومان</div>
+<button onclick="add('پودر کیک زعفرانی',175000)">افزودن به سبد</button>
+</div>
+</div>
+</section>
+
+<section class="natural" id="natural">
+<h2>🌿 شیرین‌کننده‌های طبیعی</h2>
+<div class="products">
+<div class="card"><h3>استویا</h3><p>شیرین‌کننده گیاهی</p><div class="price">۱۲۰٬۰۰۰ تومان</div><button onclick="add('استویا',120000)">افزودن به سبد</button></div>
+<div class="card"><h3>عسل طبیعی 🍯</h3><p>با عطر و طعم دلنشین</p><div class="price">۱۵۰٬۰۰۰ تومان</div><button onclick="add('عسل طبیعی',150000)">افزودن به سبد</button></div>
+<div class="card"><h3>شیره خرما 🌴</h3><p>شیرین و خوش‌طعم</p><div class="price">۹۵٬۰۰۰ تومان</div><button onclick="add('شیره خرما',95000)">افزودن به سبد</button></div>
+</div>
+</section>
+
+<section id="about" class="about">
+<h2>درباره خانه شیرین ❤️</h2>
+<p>خانه شیرین یک ایده کسب‌وکار خانگی برای تولید و عرضه پودر کیک‌های آماده با طعم‌های متنوع است. هدف ما آسان‌تر کردن شیرینی‌پزی خانگی و ایجاد تجربه‌ای خوشمزه و لذت‌بخش است.</p>
+</section>
+
+<section>
+<h2>🛒 سبد خرید شما</h2>
+<div id="cart">
+<div id="items">هنوز محصولی انتخاب نکرده‌اید.</div>
+<strong id="total">جمع کل: ۰ تومان</strong>
+</div>
+</section>
+
+<footer>
+<h3>خانه شیرین 🍰</h3>
+<p>یک کسب‌وکار خانگی با طعم خلاقیت</p>
+<p>© تمامی حقوق محفوظ است</p>
+</footer>
+
+<script>
+let cart=[];
+function add(name,price){
+cart.push({name,price});
+showCart();
+}
+function showCart(){
+let items=document.getElementById('items');
+let total=cart.reduce((sum,p)=>sum+p.price,0);
+items.innerHTML=cart.length?cart.map(p=>'<p>'+p.name+' - '+p.price.toLocaleString('fa-IR')+' تومان</p>').join(''):'سبد خرید خالی است';
+document.getElementById('total').innerText='جمع کل: '+total.toLocaleString('fa-IR')+' تومان';
+}
+</script>
+</body>
+</html>
